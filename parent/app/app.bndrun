@@ -1,0 +1,10 @@
+index: target/index.xml;name="app"
+
+-standalone: ${index}
+
+-runrequires: osgi.identity;filter:='(osgi.identity=net.qnenet.impl)'
+-runfw: org.apache.felix.framework
+-runee: JavaSE-1.8
+-runbundles: \
+	net.qnenet.impl;version='[0.0.1,0.0.2)',\
+	org.apache.felix.scr;version='[2.1.0,2.1.1)'
