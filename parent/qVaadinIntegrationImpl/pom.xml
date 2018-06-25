@@ -2,30 +2,19 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>net.qnenet</groupId>
-        <artifactId>parent</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
-        <relativePath>../pom.xml</relativePath>
-    </parent>
-    <artifactId>impl</artifactId>
-    
-    <description>The main bundle for the OSGi enRoute ${impl-artifactId} example</description>
-    
+    <artifactId>parent</artifactId>
+    <groupId>net.qnenet</groupId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+
+    <artifactId>qVaadinIntegrationImpl</artifactId>
+
+    <description>The qVaadinIntegrationImpl DS component - built using OSGi enRoute R7</description>
+
     <dependencies>
-       <dependency>
-        	<groupId>com.vaadin</groupId>
-        	<artifactId>vaadin-shared</artifactId>
-        	<version>8.4.4</version>
-        	<scope>runtime</scope>
-        </dependency>
         <dependency>
             <groupId>org.osgi.enroute</groupId>
             <artifactId>osgi-api</artifactId>
-            <type>pom</type>
-        </dependency>
-        <dependency>
-            <groupId>org.osgi.enroute</groupId>
-            <artifactId>enterprise-api</artifactId>
             <type>pom</type>
         </dependency>
         <dependency>
@@ -34,37 +23,19 @@
             <type>pom</type>
         </dependency>
         <dependency>
-        	<groupId>com.vaadin</groupId>
-        	<artifactId>vaadin-themes</artifactId>
-        	<version>8.4.4</version>
-        	<scope>runtime</scope>
-        </dependency>
-        <dependency>
-        	<groupId>com.vaadin</groupId>
-        	<artifactId>vaadin-client-compiled</artifactId>
-        	<version>8.4.4</version>
-        	<scope>runtime</scope>
-        </dependency>
-        <dependency>
-        	<groupId>com.vaadin</groupId>
-        	<artifactId>vaadin-server</artifactId>
-        	<version>8.4.4</version>
-        	<scope>runtime</scope>
-        </dependency>
-        <dependency>
-        	<groupId>net.qnenet</groupId>
-        	<artifactId>qSite</artifactId>
-        	<version>0.0.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
         	<groupId>net.qnenet</groupId>
         	<artifactId>qVaadinIntegration</artifactId>
         	<version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
-        	<groupId>net.qnenet</groupId>
-        	<artifactId>qVaadinIntegrationImpl</artifactId>
-        	<version>0.0.1-SNAPSHOT</version>
+        	<groupId>javax.servlet</groupId>
+        	<artifactId>javax.servlet-api</artifactId>
+        	<version>3.1.0</version>
+        </dependency>
+        <dependency>
+        	<groupId>org.slf4j</groupId>
+        	<artifactId>slf4j-api</artifactId>
+        	<version>1.7.25</version>
         </dependency>
                 <dependency>
             <groupId>org.osgi</groupId>
@@ -84,10 +55,22 @@
             <version>6.0.0</version>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+        	<groupId>com.vaadin</groupId>
+        	<artifactId>vaadin-server</artifactId>
+        	<version>8.4.4</version>
+        </dependency>
+        <dependency>
+        	<groupId>com.vaadin</groupId>
+        	<artifactId>vaadin-shared</artifactId>
+        	<version>8.4.4</version>
+        </dependency>
     </dependencies>
-    
+
     <build>
         <plugins>
+            <!-- Expected to inherit configuration from a parent enRoute 
+                pom. This includes -contract definitions and maven-jar-plugin setup -->
             <plugin>
                 <groupId>biz.aQute.bnd</groupId>
                 <artifactId>bnd-maven-plugin</artifactId>

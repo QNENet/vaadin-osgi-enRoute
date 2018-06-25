@@ -57,8 +57,22 @@
         <module>impl</module>
         <module>app</module>
     
+        
+    
+    
+        
+        
+
+        
+        
+    
         <module>qSite</module>
-    </modules>
+    
+        
+    <module>qTheme16</module>
+    <module>qVaadinIntegration</module>
+    <module>qVaadinIntegrationImpl</module>
+  </modules>
 
     <dependencyManagement>
         <dependencies>
